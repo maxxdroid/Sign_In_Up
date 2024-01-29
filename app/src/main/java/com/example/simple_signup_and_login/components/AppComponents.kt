@@ -37,6 +37,7 @@ import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.drawscope.translate
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
 
@@ -161,6 +162,23 @@ fun EclipsedBox (
     content(Modifier.fillMaxSize())
 }
 
+@Composable
+fun SignupDesignCircle () {
+    Canvas(modifier = Modifier.fillMaxSize()) {
+        translate(left = 00f, top = 1100f) {
+            drawCircle(Color(0xFF57CC99), radius = 300.dp.toPx())
+        }
+    }
+}
+
+@Composable
+fun SignInDesignCircle () {
+    Canvas(modifier = Modifier.fillMaxSize()) {
+        translate(left = 00f, top = -500f) {
+            drawCircle(Color(0xFF80ED99), radius = 350.dp.toPx())
+        }
+    }
+}
 
 @Composable
 @Preview
@@ -168,6 +186,7 @@ fun ViewComponents () {
         Surface ( modifier = Modifier
             .background(color = Color.White)
             .fillMaxSize()) {
+            SignInDesignCircle()
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {

@@ -30,6 +30,7 @@ import com.example.simple_signup_and_login.components.MyTextField
 import com.example.simple_signup_and_login.components.RoundedCornersButton
 import com.example.simple_signup_and_login.components.SignUpText
 import com.example.simple_signup_and_login.components.SignUpTextFields
+import com.example.simple_signup_and_login.components.SignupDesignCircle
 import com.example.simple_signup_and_login.components.TermsTexts
 import com.example.simple_signup_and_login.ui.theme.primaryA
 
@@ -40,6 +41,7 @@ fun SignUp (navController: NavHostController?=null) {
         .fillMaxSize(),
         color = Color(0xFF80ED99)
     ) {
+        SignupDesignCircle()
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -50,21 +52,11 @@ fun SignUp (navController: NavHostController?=null) {
             SignUpTextFields()
             Spacer(modifier =  Modifier.heightIn(40.dp))
             Box (
-                modifier = Modifier
-                    .background(
-                        Color(0xFF57CC99),
-                        RoundedCornerShape(
-                            topStart = 150.dp,
-                            topEnd = 150.dp,
-                            bottomEnd = 0.dp,
-                            bottomStart = 0.dp,
-                        )
-                    )
-                    .fillMaxSize(),
+                modifier = Modifier.fillMaxSize(),
             ) {
                 Column(
                     modifier = Modifier
-                        .padding(vertical = 30.dp,)
+                        .padding(vertical = 50.dp,)
                         .fillMaxSize(),
                     verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.CenterHorizontally
@@ -85,6 +77,8 @@ fun SignUp (navController: NavHostController?=null) {
         }
     }
 }
+
+
 
 @Composable
 @Preview
